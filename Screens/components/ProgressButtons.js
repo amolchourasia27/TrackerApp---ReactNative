@@ -1,14 +1,36 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  ToastAndroid,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 
-const ProgressButtons = props => {
+const ProgressButtons = (props, data) => {
+  const showToast = () => {
+    ToastAndroid.show('Good target done', ToastAndroid.LONG);
+  };
+  if (props.data >= 1) {
+    showToast();
+    // store data in database
+    // set target to 0 after everyday 12am
+    // give a toast message
+  }
   return (
     <View style={styles.ProgressButtonBox}>
-      <TouchableOpacity style={styles.cupButtons}>
+      <TouchableOpacity
+        style={styles.cupButtons}
+        onPress={() => props.setProgress(props.data + 0.1)}>
         <Text style={styles.text}>Cup</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.bottleButtons}>
+      <TouchableOpacity
+        style={styles.bottleButtons}
+        onPress={() => props.setProgress(props.data + 0.5)}>
         <Text style={styles.text}>Bottle</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => props.setProgress(0)}>
+        <Text>reset</Text>
       </TouchableOpacity>
     </View>
   );
@@ -40,5 +62,8 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 15,
+    padding: '10%',
+    alignSelf: 'center',
+    color: 'black',
   },
 });

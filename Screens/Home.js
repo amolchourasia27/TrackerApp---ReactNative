@@ -6,14 +6,16 @@ import Footer from './components/footer';
 import ProgressButtons from './components/ProgressButtons';
 
 const Home = ({navigation}) => {
-  const [progress, setProgress] = useState(0.1);
+  const [progress, setProgress] = useState(0);
   return (
     <View style={styles.bodyWrapper}>
       <View style={styles.headingBox}>
         <Text style={styles.headingText}>Today</Text>
       </View>
       <View style={styles.headingBox2}>
-        <Text style={styles.headingText2}>water target num</Text>
+        <Text style={styles.headingText2}>
+          water target {Math.round(progress * 100)}%
+        </Text>
       </View>
       <View>
         <ProgressBar
@@ -24,7 +26,7 @@ const Home = ({navigation}) => {
           color="#1AC0C6"
         />
       </View>
-      <ProgressButtons />
+      <ProgressButtons data={progress} setProgress={setProgress} />
       <Footer navigation={navigation} />
     </View>
   );
@@ -59,9 +61,8 @@ const styles = StyleSheet.create({
   },
   progressBar: {
     padding: 80,
-    height: '50%',
+    height: 200,
     width: '80%',
     alignSelf: 'center',
-    backgroundColor: 'green',
   },
 });
