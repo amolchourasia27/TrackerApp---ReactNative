@@ -4,6 +4,7 @@ import {ProgressBar} from '@react-native-community/progress-bar-android';
 
 import Footer from './components/footer';
 import ProgressButtons from './components/ProgressButtons';
+import Progress from './components/Progress';
 
 const Home = ({navigation}) => {
   const [progress, setProgress] = useState(0);
@@ -17,15 +18,8 @@ const Home = ({navigation}) => {
           water target {Math.round(progress * 100)}%
         </Text>
       </View>
-      <View>
-        <ProgressBar
-          style={styles.progressBar}
-          styleAttr="Horizontal"
-          indeterminate={false}
-          progress={progress}
-          color="#1AC0C6"
-        />
-      </View>
+      <Progress prg={progress} />
+      <View />
       <ProgressButtons data={progress} setProgress={setProgress} />
       <Footer navigation={navigation} />
     </View>

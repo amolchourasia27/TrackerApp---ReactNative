@@ -8,8 +8,10 @@ import {
 } from 'react-native';
 
 const ProgressButtons = (props, data) => {
+  const work = false;
   const showToast = () => {
     ToastAndroid.show('Good target done', ToastAndroid.LONG);
+    const work = true;
   };
   if (props.data >= 1) {
     showToast();
@@ -21,6 +23,7 @@ const ProgressButtons = (props, data) => {
     <View style={styles.ProgressButtonBox}>
       <TouchableOpacity
         style={styles.cupButtons}
+        disabled={work}
         onPress={() => props.setProgress(props.data + 0.1)}>
         <Text style={styles.text}>Cup</Text>
       </TouchableOpacity>
