@@ -7,7 +7,6 @@ const Chart = () => {
   const screenWidth = Dimensions.get('window').width;
   return (
     <View>
-      <Text>Bezier Line Chart</Text>
       <LineChart
         data={{
           labels: ['January', 'February', 'March', 'April', 'May', 'June'],
@@ -25,12 +24,12 @@ const Chart = () => {
           ],
         }}
         width={Dimensions.get('window').width} // from react-native
-        height={220}
+        height={190}
         yAxisLabel="$"
         yAxisSuffix="k"
         yAxisInterval={1} // optional, defaults to 1
         chartConfig={{
-          backgroundColor: '#0a4c4f',
+          backgroundColor: 'black',
           backgroundGradientFrom: '#0d6063',
           backgroundGradientTo: '#12868a',
           decimalPlaces: 2, // optional, defaults to 2dp

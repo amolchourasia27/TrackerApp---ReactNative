@@ -27,13 +27,14 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
   },
   calenderContainer: {
-    flex: 1,
-    flexDirection: 'row',
-    marginHorizontal: '45%',
+    width: '100%',
+    height: '50%',
   },
   chartContainer: {
-    flex: 2,
     flexDirection: 'row',
+    width: '100%',
+    height: '55%',
+    zIndex: 2,
   },
   footer: {
     position: 'absolute',
@@ -43,6 +44,6 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-evenly',
-    marginVertical: '10%',
+    marginVertical: '5%',
   },
 });

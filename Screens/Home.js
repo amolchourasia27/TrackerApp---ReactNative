@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
-import {View, Button, TouchableOpacity, Text, StyleSheet} from 'react-native';
-import {ProgressBar} from '@react-native-community/progress-bar-android';
+import {View, Text, StyleSheet} from 'react-native';
 
 import Footer from './components/footer';
 import ProgressButtons from './components/ProgressButtons';
@@ -41,9 +40,9 @@ const styles = StyleSheet.create({
     paddingVertical: 30,
   },
   headingText: {
-    fontSize: 22,
+    fontSize: 32,
     fontWeight: 'bold',
-    color: '#1AC0C6',
+    color: 'white',
   },
   headingBox2: {
     alignSelf: 'center',
@@ -51,7 +50,7 @@ const styles = StyleSheet.create({
   },
   headingText2: {
     fontSize: 18,
-    color: '#1c44c6',
+    color: '#1AC0C6',
   },
   progressBar: {
     padding: 80,

@@ -13,9 +13,9 @@ import {Dimensions} from 'react-native';
 
 const Progress = props => {
   const chartConfig = {
-    backgroundGradientFrom: '#1E2923',
+    backgroundGradientFrom: 'white',
     backgroundGradientFromOpacity: 0,
-    backgroundGradientTo: '#08130D',
+    backgroundGradientTo: 'black',
     backgroundGradientToOpacity: 1,
     color: (opacity = 1) => `rgba(26, 192, 198, ${opacity})`,
     strokeWidth: 2, // optional, default 3
